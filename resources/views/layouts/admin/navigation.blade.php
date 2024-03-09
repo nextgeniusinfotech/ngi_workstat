@@ -39,6 +39,14 @@
                             <span>Working Hour</span>
                         </a>
                     </li>
+
+                    <li class="dropdown active">
+                        <a class="nav-link menu-title {{ request()->routeIs('admin.report') ? 'active-bg' : '' }}"
+                            href="{{ route('admin.report') }}">
+                            <i data-feather="file"></i>
+                            <span>Report</span>
+                        </a>
+                    </li>
                     {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ request()->routeIs('admin.index.change-password') ? 'active-bg' : '' }}"
                             href="{{ route('admin.index.change-password') }}">
