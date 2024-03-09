@@ -16,6 +16,7 @@ class CategorySeeder extends Seeder
         $categories = [
             ['name' => 'Create API'],
             ['name' => 'API Integration'],
+            ['name' => 'BUg Fixing'],
             ['name' => 'UI/UX design'],
             ['name' => 'Documentation'],
             ['name' => 'Miscellaneous'],

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -13,6 +14,7 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
+        $id = Auth::id();
         $projects = Project::search($request->search)->latest()->paginate(10)->withQueryString();
 
         return view('admin.projects', compact('projects'));

@@ -15,20 +15,23 @@
                             <span>Home</span>
                         </a>
                     </li>
-                    <li class="dropdown active">
-                        <a class="nav-link menu-title {{ request()->routeIs('admin.users') ? 'active-bg' : '' }}"
-                            href="{{ route('admin.users') }}">
-                            <i data-feather="users"></i>
-                            <span>Employee</span>
-                        </a>
-                    </li>
-                    <li class="dropdown active">
-                        <a class="nav-link menu-title {{ request()->routeIs('admin.projects') ? 'active-bg' : '' }}"
-                            href="{{ route('admin.projects') }}">
-                            <i data-feather="bookmark"></i>
-                            <span>Project</span>
-                        </a>
-                    </li>
+                    @can('admin')
+                        <li class="dropdown active">
+                            <a class="nav-link menu-title {{ request()->routeIs('admin.users') ? 'active-bg' : '' }}"
+                                href="{{ route('admin.users') }}">
+                                <i data-feather="users"></i>
+                                <span>Employee</span>
+                            </a>
+                        </li>
+                        <li class="dropdown active">
+                            <a class="nav-link menu-title {{ request()->routeIs('admin.projects') ? 'active-bg' : '' }}"
+                                href="{{ route('admin.projects') }}">
+                                <i data-feather="bookmark"></i>
+                                <span>Project</span>
+                            </a>
+                        </li>
+                    @endcan
+
                     <li class="dropdown active">
                         <a class="nav-link menu-title {{ request()->routeIs('admin.working_hours') ? 'active-bg' : '' }}"
                             href="{{ route('admin.working_hours') }}">
