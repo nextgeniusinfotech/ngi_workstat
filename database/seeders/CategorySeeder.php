@@ -14,13 +14,17 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Create API'],
-            ['name' => 'API Integration'],
-            ['name' => 'BUg Fixing'],
-            ['name' => 'UI/UX design'],
             ['name' => 'Documentation'],
+            ['name' => 'Create API'],
+            ['name' => 'UI/UX design'],
+            ['name' => 'API Integration'],
+            ['name' => 'Bug Fixing'],
             ['name' => 'Miscellaneous'],
+            ['name' => 'Database Management'],
+            ['name' => 'Testing and Quality Assurance'],
+            ['name' => 'Client Communication'],
         ];
+        
 
         Category::insert($categories);
     }

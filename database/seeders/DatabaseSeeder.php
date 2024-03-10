@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                 'role' => 1,
                 'username' => 'ngi_developer',
                 'email' => 'ngi_developer@gmail.com',
-                'password' => Hash::make('ngi@admin')
+                'password' => Hash::make('ngi@developer')
             ]
         );
 

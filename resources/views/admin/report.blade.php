@@ -5,7 +5,7 @@
         <div class="container-fluid mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card shadow">
                         <form action="{{ route('admin.report') }}" method="GET" class="theme-form"
                             enctype="multipart/form-data">
                             @csrf
@@ -15,12 +15,11 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <x-admin.input class="" type="date" name="from_date" label="From Date"
-                                            />
+                                        <x-admin.input class="" type="date" name="from_date"
+                                            label="From Date" />
                                     </div>
                                     <div class="col-md-6">
-                                        <x-admin.input class="" type="date" name="to_date" label="To Date"
-                                            />
+                                        <x-admin.input class="" type="date" name="to_date" label="To Date" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -62,7 +61,23 @@
                 </div>
             </div>
 
-            @if ($reports)
+
+            @if ($reports->isNotEmpty())
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="card card-absolute shadow">
+                            <div class="card-header bg-secondary">
+                                <h5 class="text-white">Project Work Hours</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>Employee Name: <strong>{{ $user_name }}</strong></p>
+                                <p>Total Working Hour: <strong
+                                        class="span badge rounded-pill pill-badge-success">{{ $total_work_hours }}</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead class="table-success">
@@ -84,6 +99,8 @@
                         </tbody>
                     </table>
                 </div>
+            @elseif($user_name)
+                <h4 class="text-center text-danger">No data found</h4>
             @endif
         </div>
     </div>
