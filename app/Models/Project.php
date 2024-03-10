@@ -14,4 +14,11 @@ class Project extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->name,
+        ];
+    }
 }

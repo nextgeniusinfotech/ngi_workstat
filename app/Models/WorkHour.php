@@ -33,4 +33,11 @@ class WorkHour extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function toSearchableArray()
+    {
+        return [
+            'category_id' => $this->name,
+        ];
+    }
 }

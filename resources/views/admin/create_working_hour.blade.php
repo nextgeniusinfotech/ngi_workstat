@@ -32,7 +32,7 @@
                                         <label class="form-label" for="project">Select Project</label>
                                         <select required class="form-select digits form-control" id="project_id"
                                             name="project_id">
-                                            <option selected disabled value="">--Select Category--
+                                            <option selected disabled value="">--Select Project--
                                             </option>
                                             @foreach ($projects as $project)
                                                 <option value="{{ $project->id }}">{{ $project->name }}
