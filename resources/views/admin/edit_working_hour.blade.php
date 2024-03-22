@@ -63,7 +63,7 @@
                                         key="required" value="{{ $working_hour->date }}" />
                                 </div>
                                 <div class="col-md-12">
-                                    <x-admin.input class="" type="number" name="hour" label="Working Hour"
+                                    <x-admin.input class="" type="text" name="hour" label="Working Hour"
                                         key="required" value="{{ $working_hour->hour }}" />
                                 </div>
                                 <div class="col-md-12">

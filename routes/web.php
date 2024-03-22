@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\JewelleryImageController;
+use App\Http\Controllers\Admin\MailController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\SubscriptionPlanController;
 
@@ -86,5 +87,7 @@ Route::name('admin.')->group(function () {
         Route::delete('/delete-working_hour/{id}', [WorkingHourController::class, 'destroy'])->name('delete-working_hour');
 
         Route::get('/report', ReportController::class)->name('report');
+
+        Route::get('/mail', [MailController::class, 'index'])->name('mail');
     });
 });
